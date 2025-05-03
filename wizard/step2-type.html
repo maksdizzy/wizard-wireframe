@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Creation Wizard - Step 2: Select Base Type</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            primary: '#121212',
+                            secondary: '#1e1e1e',
+                            tertiary: '#2d2d2d',
+                            border: '#333333',
+                        },
+                        accent: {
+                            primary: '#3b82f6',
+                            secondary: '#10b981',
+                            tertiary: '#f43f5e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-dark-primary text-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-dark-secondary border-b border-dark-border">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center w-full md:w-auto justify-between">
+                <h1 class="text-xl font-bold">Application Creation Wizard</h1>
+                <button class="md:hidden text-white mobile-menu-button">
+                    <!-- Hamburger icon for mobile -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- User menu -->
+            <div class="hidden md:flex items-center mt-4 md:mt-0">
+                <div class="relative">
+                    <button class="flex items-center space-x-2 focus:outline-none">
+                        <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center">
+                            <span class="text-sm font-medium">JD</span>
+                        </div>
+                        <span>John Doe</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Progress indicator -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Create New Application</h2>
+            <div class="flex items-center">
+                <div class="flex-1 flex items-center">
+                    <!-- Step 1 -->
+                    <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center text-white font-medium">1</div>
+                    <div class="h-1 flex-1 bg-accent-primary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 2 -->
+                    <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center text-white font-medium">2</div>
+                    <div class="h-1 flex-1 bg-dark-tertiary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 3 -->
+                    <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center text-white font-medium">3</div>
+                    <div class="h-1 flex-1 bg-dark-tertiary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 4 -->
+                    <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center text-white font-medium">4</div>
+                    <div class="h-1 flex-1 bg-dark-tertiary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 5 -->
+                    <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center text-white font-medium">5</div>
+                    <div class="h-1 flex-1 bg-dark-tertiary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 6 -->
+                    <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center text-white font-medium">6</div>
+                    <div class="h-1 flex-1 bg-dark-tertiary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 7 -->
+                    <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center text-white font-medium">7</div>
+                </div>
+            </div>
+            <div class="mt-2 text-center text-sm text-gray-400">Step 2 of 7: Select Base Type</div>
+        </div>
+        
+        <!-- Step 2: Select Base Type -->
+        <div class="bg-dark-secondary rounded-lg p-6 border border-dark-border wizard-step" data-step="2" data-prev="1" data-next="3">
+            <h3 class="text-xl font-medium mb-6">Select Base Type</h3>
+            <p class="text-gray-400 mb-6">Choose the core feature set for your application</p>
+            
+            <form>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- DeFi Option -->
+                    <label class="relative block cursor-pointer">
+                        <input type="radio" name="base-type" value="defi" class="sr-only" checked>
+                        <div class="p-4 border border-dark-border rounded-lg hover:border-accent-primary transition duration-200 h-full">
+                            <div class="flex items-start mb-4">
+                                <div class="flex-shrink-0 w-6 h-6 border-2 border-accent-primary rounded-full flex items-center justify-center mr-3">
+                                    <div class="w-3 h-3 bg-accent-primary rounded-full"></div>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">DeFi Focused App</h4>
+                                    <p class="text-sm text-gray-400 mt-1">For financial applications and token interactions</p>
+                                </div>
+                            </div>
+                            <div class="bg-dark-tertiary rounded-md p-4 text-sm">
+                                <p class="mb-2 text-gray-300">Includes:</p>
+                                <ul class="list-disc pl-5 text-gray-400 space-y-1">
+                                    <li>Wallet Connect integration</li>
+                                    <li>Basic Swap UI</li>
+                                    <li>Token balance display</li>
+                                    <li>Transaction history</li>
+                                    <li>Price charts</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </label>
+                    
+                    <!-- Community Option -->
+                    <label class="relative block cursor-pointer">
+                        <input type="radio" name="base-type" value="community" class="sr-only">
+                        <div class="p-4 border border-dark-border rounded-lg hover:border-accent-primary transition duration-200 h-full">
+                            <div class="flex items-start mb-4">
+                                <div class="flex-shrink-0 w-6 h-6 border-2 border-dark-border rounded-full flex items-center justify-center mr-3">
+                                    <div class="w-3 h-3 bg-transparent rounded-full"></div>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Community App</h4>
+                                    <p class="text-sm text-gray-400 mt-1">For social interaction and community building</p>
+                                </div>
+                            </div>
+                            <div class="bg-dark-tertiary rounded-md p-4 text-sm">
+                                <p class="mb-2 text-gray-300">Includes:</p>
+                                <ul class="list-disc pl-5 text-gray-400 space-y-1">
+                                    <li>User profiles</li>
+                                    <li>Basic feed</li>
+                                    <li>Discussion forums</li>
+                                    <li>Direct messaging</li>
+                                    <li>Content sharing</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Navigation buttons -->
+                <div class="flex justify-between mt-8">
+                    <a href="step1-basics.html" class="wizard-back px-4 py-2 border border-dark-border rounded-md text-gray-300 hover:bg-dark-tertiary transition duration-200">
+                        Back
+                    </a>
+                    <a href="step3-components.html" class="wizard-next px-4 py-2 bg-accent-primary hover:bg-blue-600 text-white rounded-md transition duration-200">
+                        Next
+                    </a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div class="mobile-menu hidden md:hidden fixed inset-0 bg-dark-primary bg-opacity-90 z-50">
+        <div class="flex justify-end p-4">
+            <button class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="p-4">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 rounded-full bg-accent-primary flex items-center justify-center mr-3">
+                    <span class="text-sm font-medium">JD</span>
+                </div>
+                <div>
+                    <div class="font-medium">John Doe</div>
+                    <div class="text-sm text-gray-400">john.doe@example.com</div>
+                </div>
+            </div>
+            <ul class="space-y-4">
+                <li><a href="../dashboard-empty.html" class="block py-2 text-white">Dashboard</a></li>
+                <li><a href="#" class="block py-2 text-white">Settings</a></li>
+                <li><a href="#" class="block py-2 text-white">Help</a></li>
+                <li><a href="../index.html" class="block py-2 text-white">Sign Out</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Mobile bottom navigation -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-dark-secondary border-t border-dark-border p-4 flex justify-between">
+        <a href="step1-basics.html" class="wizard-back px-4 py-2 border border-dark-border rounded-md text-gray-300 hover:bg-dark-tertiary transition duration-200">
+            Back
+        </a>
+        <a href="step3-components.html" class="wizard-next px-4 py-2 bg-accent-primary hover:bg-blue-600 text-white rounded-md transition duration-200">
+            Next
+        </a>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Handle radio button selection
+        document.addEventListener('DOMContentLoaded', function() {
+            const radioButtons = document.querySelectorAll('input[name="base-type"]');
+            
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    // Reset all radio button containers
+                    document.querySelectorAll('input[name="base-type"]').forEach(rb => {
+                        const container = rb.closest('label').querySelector('div');
+                        const indicator = rb.closest('label').querySelector('.w-6.h-6');
+                        const dot = rb.closest('label').querySelector('.w-3.h-3');
+                        
+                        if (rb.checked) {
+                            container.classList.add('border-accent-primary');
+                            indicator.classList.remove('border-dark-border');
+                            indicator.classList.add('border-accent-primary');
+                            dot.classList.remove('bg-transparent');
+                            dot.classList.add('bg-accent-primary');
+                        } else {
+                            container.classList.remove('border-accent-primary');
+                            indicator.classList.remove('border-accent-primary');
+                            indicator.classList.add('border-dark-border');
+                            dot.classList.remove('bg-accent-primary');
+                            dot.classList.add('bg-transparent');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

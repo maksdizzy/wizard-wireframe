@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Creation Wizard - Provisioning</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            primary: '#121212',
+                            secondary: '#1e1e1e',
+                            tertiary: '#2d2d2d',
+                            border: '#333333',
+                        },
+                        accent: {
+                            primary: '#3b82f6',
+                            secondary: '#10b981',
+                            tertiary: '#f43f5e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-dark-primary text-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-dark-secondary border-b border-dark-border">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center w-full md:w-auto justify-between">
+                <h1 class="text-xl font-bold">Application Creation Wizard</h1>
+                <button class="md:hidden text-white mobile-menu-button">
+                    <!-- Hamburger icon for mobile -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- User menu -->
+            <div class="hidden md:flex items-center mt-4 md:mt-0">
+                <div class="relative">
+                    <button class="flex items-center space-x-2 focus:outline-none">
+                        <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center">
+                            <span class="text-sm font-medium">JD</span>
+                        </div>
+                        <span>John Doe</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-2xl font-bold mb-8 text-center">Creating Your Application</h2>
+            
+            <!-- Provisioning animation -->
+            <div class="flex justify-center mb-8">
+                <div class="w-32 h-32 relative">
+                    <div class="absolute inset-0 border-4 border-dark-tertiary rounded-full"></div>
+                    <div class="absolute inset-0 border-4 border-transparent border-t-accent-primary rounded-full animate-spin"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-accent-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Progress steps -->
+            <div class="bg-dark-secondary rounded-lg p-6 border border-dark-border mb-8">
+                <h3 class="text-lg font-medium mb-4">Provisioning Progress</h3>
+                
+                <div class="space-y-4">
+                    <!-- Step 1: Completed -->
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-accent-secondary flex items-center justify-center mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-medium">Initializing Application</p>
+                            <p class="text-sm text-gray-400">Setting up application structure</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Completed -->
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-accent-secondary flex items-center justify-center mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-medium">Configuring Base Template</p>
+                            <p class="text-sm text-gray-400">Setting up DeFi focused application template</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: In Progress -->
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center mr-3 relative">
+                            <div class="absolute inset-0 border-2 border-transparent border-t-white rounded-full animate-spin"></div>
+                            <span class="text-white text-xs">3</span>
+                        </div>
+                        <div>
+                            <p class="font-medium">Adding Components</p>
+                            <p class="text-sm text-gray-400">Installing NFT Gallery, Multi-Chain Support, Staking Module</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Pending -->
+                    <div class="flex items-center opacity-50">
+                        <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center mr-3">
+                            <span class="text-white text-xs">4</span>
+                        </div>
+                        <div>
+                            <p class="font-medium">Applying Theme</p>
+                            <p class="text-sm text-gray-400">Configuring appearance settings</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5: Pending -->
+                    <div class="flex items-center opacity-50">
+                        <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center mr-3">
+                            <span class="text-white text-xs">5</span>
+                        </div>
+                        <div>
+                            <p class="font-medium">Configuring External Services</p>
+                            <p class="text-sm text-gray-400">Setting up Telegram Bot and API connections</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 6: Pending -->
+                    <div class="flex items-center opacity-50">
+                        <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center mr-3">
+                            <span class="text-white text-xs">6</span>
+                        </div>
+                        <div>
+                            <p class="font-medium">Deploying Web App</p>
+                            <p class="text-sm text-gray-400">Finalizing and deploying your application</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Estimated time -->
+            <div class="text-center mb-8">
+                <p class="text-gray-400">Estimated time remaining: <span class="text-white font-medium">3-5 minutes</span></p>
+                <p class="text-sm text-gray-500 mt-1">You can safely navigate away from this page. We'll notify you when your application is ready.</p>
+            </div>
+            
+            <!-- Cancel button -->
+            <div class="text-center">
+                <button class="text-gray-400 hover:text-white underline">Cancel Deployment</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div class="mobile-menu hidden md:hidden fixed inset-0 bg-dark-primary bg-opacity-90 z-50">
+        <div class="flex justify-end p-4">
+            <button class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="p-4">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 rounded-full bg-accent-primary flex items-center justify-center mr-3">
+                    <span class="text-sm font-medium">JD</span>
+                </div>
+                <div>
+                    <div class="font-medium">John Doe</div>
+                    <div class="text-sm text-gray-400">john.doe@example.com</div>
+                </div>
+            </div>
+            <ul class="space-y-4">
+                <li><a href="../dashboard-empty.html" class="block py-2 text-white">Dashboard</a></li>
+                <li><a href="#" class="block py-2 text-white">Settings</a></li>
+                <li><a href="#" class="block py-2 text-white">Help</a></li>
+                <li><a href="../index.html" class="block py-2 text-white">Sign Out</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Simulate progress updates
+        document.addEventListener('DOMContentLoaded', function() {
+            // Redirect to success page after 5 seconds (for demo purposes)
+            setTimeout(function() {
+                window.location.href = 'step9-success.html';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

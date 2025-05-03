@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Creation Wizard - Step 7: Review & Confirm</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            primary: '#121212',
+                            secondary: '#1e1e1e',
+                            tertiary: '#2d2d2d',
+                            border: '#333333',
+                        },
+                        accent: {
+                            primary: '#3b82f6',
+                            secondary: '#10b981',
+                            tertiary: '#f43f5e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-dark-primary text-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-dark-secondary border-b border-dark-border">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center w-full md:w-auto justify-between">
+                <h1 class="text-xl font-bold">Application Creation Wizard</h1>
+                <button class="md:hidden text-white mobile-menu-button">
+                    <!-- Hamburger icon for mobile -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- User menu -->
+            <div class="hidden md:flex items-center mt-4 md:mt-0">
+                <div class="relative">
+                    <button class="flex items-center space-x-2 focus:outline-none">
+                        <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center">
+                            <span class="text-sm font-medium">JD</span>
+                        </div>
+                        <span>John Doe</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Progress indicator -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Create New Application</h2>
+            <div class="flex items-center">
+                <div class="flex-1 flex items-center">
+                    <!-- Step 1 -->
+                    <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center text-white font-medium">1</div>
+                    <div class="h-1 flex-1 bg-accent-primary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 2 -->
+                    <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center text-white font-medium">2</div>
+                    <div class="h-1 flex-1 bg-accent-primary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 3 -->
+                    <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center text-white font-medium">3</div>
+                    <div class="h-1 flex-1 bg-accent-primary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 4 -->
+                    <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center text-white font-medium">4</div>
+                    <div class="h-1 flex-1 bg-accent-primary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 5 -->
+                    <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center text-white font-medium">5</div>
+                    <div class="h-1 flex-1 bg-accent-primary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 6 -->
+                    <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center text-white font-medium">6</div>
+                    <div class="h-1 flex-1 bg-accent-primary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 7 -->
+                    <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center text-white font-medium">7</div>
+                </div>
+            </div>
+            <div class="mt-2 text-center text-sm text-gray-400">Step 7 of 7: Review & Confirm</div>
+        </div>
+        
+        <!-- Step 7: Review & Confirm -->
+        <div class="bg-dark-secondary rounded-lg p-6 border border-dark-border wizard-step" data-step="7" data-prev="6">
+            <h3 class="text-xl font-medium mb-6">Review & Confirm</h3>
+            <p class="text-gray-400 mb-6">Please review your application details before creation</p>
+            
+            <div class="space-y-6">
+                <!-- Application Basics -->
+                <div class="border border-dark-border rounded-lg overflow-hidden">
+                    <div class="bg-dark-tertiary px-4 py-3 flex justify-between items-center">
+                        <h4 class="font-medium">Application Basics</h4>
+                        <a href="step1-basics.html" class="text-accent-primary text-sm hover:underline">Edit</a>
+                    </div>
+                    <div class="p-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-sm text-gray-400">Application Name</p>
+                                <p class="font-medium">My DeFi App</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400">Description</p>
+                                <p class="font-medium">A decentralized finance application with token swapping and portfolio tracking.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Base Type -->
+                <div class="border border-dark-border rounded-lg overflow-hidden">
+                    <div class="bg-dark-tertiary px-4 py-3 flex justify-between items-center">
+                        <h4 class="font-medium">Base Type</h4>
+                        <a href="step2-type.html" class="text-accent-primary text-sm hover:underline">Edit</a>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-200" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-medium">DeFi Focused App</p>
+                                <p class="text-sm text-gray-400">Includes Wallet Connect, Basic Swap UI, Token Balance Display, Transaction History, Price Charts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Components -->
+                <div class="border border-dark-border rounded-lg overflow-hidden">
+                    <div class="bg-dark-tertiary px-4 py-3 flex justify-between items-center">
+                        <h4 class="font-medium">Added Components</h4>
+                        <a href="step3-components.html" class="text-accent-primary text-sm hover:underline">Edit</a>
+                    </div>
+                    <div class="p-4">
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-secondary mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>NFT Gallery</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-secondary mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Multi-Chain Support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-secondary mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Staking Module</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Appearance -->
+                <div class="border border-dark-border rounded-lg overflow-hidden">
+                    <div class="bg-dark-tertiary px-4 py-3 flex justify-between items-center">
+                        <h4 class="font-medium">Appearance</h4>
+                        <a href="step4-appearance.html" class="text-accent-primary text-sm hover:underline">Edit</a>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded overflow-hidden bg-gradient-to-br from-gray-900 to-blue-900 mr-4"></div>
+                            <div>
+                                <p class="font-medium">Dark Blue Theme</p>
+                                <p class="text-sm text-gray-400">Logo: <span class="text-white">Uploaded</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="border border-dark-border rounded-lg overflow-hidden">
+                    <div class="bg-dark-tertiary px-4 py-3 flex justify-between items-center">
+                        <h4 class="font-medium">Social Links</h4>
+                        <a href="step5-social.html" class="text-accent-primary text-sm hover:underline">Edit</a>
+                    </div>
+                    <div class="p-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-sm text-gray-400">Website</p>
+                                <p class="font-medium">example.com</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400">Twitter</p>
+                                <p class="font-medium">twitter.com/mydefiapp</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400">Telegram</p>
+                                <p class="font-medium">t.me/mydefiapp</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400">Discord</p>
+                                <p class="font-medium">discord.gg/mydefiapp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Credentials Status -->
+                <div class="border border-dark-border rounded-lg overflow-hidden">
+                    <div class="bg-dark-tertiary px-4 py-3 flex justify-between items-center">
+                        <h4 class="font-medium">Credentials & Settings</h4>
+                        <a href="step6-credentials.html" class="text-accent-primary text-sm hover:underline">Edit</a>
+                    </div>
+                    <div class="p-4">
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-secondary mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Telegram Bot Token: <span class="text-gray-400">Provided</span></span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-secondary mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>NFT API Key: <span class="text-gray-400">Provided</span></span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-secondary mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Multi-Chain RPC URLs: <span class="text-gray-400">Provided</span></span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-secondary mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Staking Contract Address: <span class="text-gray-400">Provided</span></span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-secondary mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Email Notifications: <span class="text-gray-400">Enabled</span></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Terms and Conditions -->
+            <div class="mt-8">
+                <label class="flex items-start">
+                    <input type="checkbox" class="mt-1 h-4 w-4 text-accent-primary bg-dark-primary border-dark-border rounded focus:ring-accent-primary focus:ring-opacity-25">
+                    <div class="ml-3">
+                        <span class="block text-sm">I agree to the <a href="#" class="text-accent-primary hover:underline">Terms of Service</a> and <a href="#" class="text-accent-primary hover:underline">Privacy Policy</a></span>
+                    </div>
+                </label>
+            </div>
+            
+            <!-- Navigation buttons -->
+            <div class="flex justify-between mt-8">
+                <a href="step6-credentials.html" class="wizard-back px-4 py-2 border border-dark-border rounded-md text-gray-300 hover:bg-dark-tertiary transition duration-200">
+                    Back
+                </a>
+                <a href="step8-provisioning.html" class="wizard-next px-4 py-2 bg-accent-primary hover:bg-blue-600 text-white rounded-md transition duration-200">
+                    Create Application
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div class="mobile-menu hidden md:hidden fixed inset-0 bg-dark-primary bg-opacity-90 z-50">
+        <div class="flex justify-end p-4">
+            <button class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="p-4">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 rounded-full bg-accent-primary flex items-center justify-center mr-3">
+                    <span class="text-sm font-medium">JD</span>
+                </div>
+                <div>
+                    <div class="font-medium">John Doe</div>
+                    <div class="text-sm text-gray-400">john.doe@example.com</div>
+                </div>
+            </div>
+            <ul class="space-y-4">
+                <li><a href="../dashboard-empty.html" class="block py-2 text-white">Dashboard</a></li>
+                <li><a href="#" class="block py-2 text-white">Settings</a></li>
+                <li><a href="#" class="block py-2 text-white">Help</a></li>
+                <li><a href="../index.html" class="block py-2 text-white">Sign Out</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Mobile bottom navigation -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-dark-secondary border-t border-dark-border p-4 flex justify-between">
+        <a href="step6-credentials.html" class="wizard-back px-4 py-2 border border-dark-border rounded-md text-gray-300 hover:bg-dark-tertiary transition duration-200">
+            Back
+        </a>
+        <a href="step8-provisioning.html" class="wizard-next px-4 py-2 bg-accent-primary hover:bg-blue-600 text-white rounded-md transition duration-200">
+            Create
+        </a>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

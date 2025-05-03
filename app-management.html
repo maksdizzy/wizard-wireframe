@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Management - My DeFi App</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            primary: '#121212',
+                            secondary: '#1e1e1e',
+                            tertiary: '#2d2d2d',
+                            border: '#333333',
+                        },
+                        accent: {
+                            primary: '#3b82f6',
+                            secondary: '#10b981',
+                            tertiary: '#f43f5e',
+                        },
+                        status: {
+                            running: '#10b981',
+                            issues: '#fbbf24',
+                            stopped: '#6b7280',
+                            updating: '#3b82f6',
+                            error: '#f43f5e'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Tab styles */
+        .tab-button.active {
+            color: white;
+            border-color: #3b82f6;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-dark-primary text-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-dark-secondary border-b border-dark-border">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold">Application Creation Wizard</h1>
+            <div class="flex items-center">
+                <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center mr-2">
+                    <span class="text-sm font-medium">JD</span>
+                </div>
+                <span>John Doe</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- App Management Header -->
+    <div class="bg-dark-tertiary border-b border-dark-border">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center">
+                        <h2 class="text-2xl font-bold mr-3">My DeFi App</h2>
+                        <span class="flex items-center bg-status-running bg-opacity-20 text-status-running px-3 py-1 rounded-full text-sm">
+                            <span class="w-3 h-3 bg-status-running rounded-full mr-2"></span>
+                            Running
+                        </span>
+                    </div>
+                    <p class="text-gray-400 mt-1">DeFi Focused Application</p>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <button class="bg-status-running hover:bg-green-700 text-white py-2 px-4 rounded-md text-sm transition duration-200 flex items-center">
+                        <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
+                        Running
+                    </button>
+                    <a href="#" class="bg-dark-secondary hover:bg-gray-700 text-white py-2 px-4 rounded-md text-sm transition duration-200 flex items-center">
+                        Web App
+                    </a>
+                    <a href="#" class="bg-dark-secondary hover:bg-gray-700 text-white py-2 px-4 rounded-md text-sm transition duration-200 flex items-center">
+                        Telegram Bot
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="bg-dark-secondary border-b border-dark-border">
+        <div class="container mx-auto px-4">
+            <div class="flex overflow-x-auto">
+                <button class="tab-button active px-4 py-3 text-white border-b-2 border-accent-primary focus:outline-none" data-tab="overview">Overview</button>
+                <button class="tab-button px-4 py-3 text-gray-400 border-b-2 border-transparent hover:text-white focus:outline-none" data-tab="settings">Settings</button>
+                <button class="tab-button px-4 py-3 text-gray-400 border-b-2 border-transparent hover:text-white focus:outline-none" data-tab="usage">Usage Analytics</button>
+                <button class="tab-button px-4 py-3 text-gray-400 border-b-2 border-transparent hover:text-white focus:outline-none" data-tab="health">Health & Logs</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Overview Tab -->
+        <div id="overview" class="tab-content active">
+            <!-- Key Metrics -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                <div class="bg-dark-secondary rounded-lg p-4 border border-dark-border">
+                    <p class="text-sm text-gray-400">Active Users (7d)</p>
+                    <p class="text-2xl font-bold">127</p>
+                    <p class="text-xs text-green-500">+12% from last week</p>
+                </div>
+                
+                <div class="bg-dark-secondary rounded-lg p-4 border border-dark-border">
+                    <p class="text-sm text-gray-400">Total Transactions</p>
+                    <p class="text-2xl font-bold">1,458</p>
+                    <p class="text-xs text-green-500">+15% from last week</p>
+                </div>
+                
+                <div class="bg-dark-secondary rounded-lg p-4 border border-dark-border">
+                    <p class="text-sm text-gray-400">Avg. Session Time</p>
+                    <p class="text-2xl font-bold">4m 32s</p>
+                    <p class="text-xs text-green-500">+5% from last week</p>
+                </div>
+                
+                <div class="bg-dark-secondary rounded-lg p-4 border border-dark-border">
+                    <p class="text-sm text-gray-400">Bot Interactions</p>
+                    <p class="text-2xl font-bold">342</p>
+                    <p class="text-xs text-green-500">+8% from last week</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <!-- Overall Application Health -->
+                <div class="bg-dark-secondary rounded-lg p-6 border border-dark-border">
+                    <h3 class="text-lg font-medium mb-4">Overall Application Health</h3>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-status-running bg-opacity-20 flex items-center justify-center mr-4">
+                            <span class="text-status-running text-2xl">🟢</span>
+                        </div>
+                        <div>
+                            <p class="font-medium text-lg">Healthy</p>
+                            <p class="text-gray-400">Application is responding normally.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-4">
+                        <div class="bg-dark-tertiary rounded-lg p-3">
+                            <div class="flex items-center mb-1">
+                                <h4 class="font-medium text-sm">Web App Speed</h4>
+                            </div>
+                            <p class="text-green-500 text-sm">Fast (95ms avg)</p>
+                        </div>
+                        
+                        <div class="bg-dark-tertiary rounded-lg p-3">
+                            <div class="flex items-center mb-1">
+                                <h4 class="font-medium text-sm">Recent Errors</h4>
+                            </div>
+                            <p class="text-green-500 text-sm">Low (2 errors in 24h)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Application Details -->
+                <div class="bg-dark-secondary rounded-lg p-6 border border-dark-border">
+                    <h3 class="text-lg font-medium mb-4">Application Details</h3>
+                    
+                    <div class="grid grid-cols-3 gap-4 mb-4">
+                        <div>
+                            <p class="text-sm text-gray-400">App Type</p>
+                            <p>DeFi Focused</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400">Created</p>
+                            <p>April 30, 2025</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400">Last Modified</p>
+                            <p>May 1, 2025</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <h5 class="text-sm text-gray-400 mb-2">Base Components</h5>
+                            <ul class="space-y-1 text-sm">
+                                <li>Wallet Connect</li>
+                                <li>Basic Swap UI</li>
+                                <li>Token Balance Display</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h5 class="text-sm text-gray-400 mb-2">Added Components</h5>
+                            <ul class="space-y-1 text-sm">
+                                <li>NFT Gallery</li>
+                                <li>Multi-Chain Support</li>
+                                <li>Staking Module</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Activity -->
+            <div class="bg-dark-secondary rounded-lg p-6 border border-dark-border">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-medium">Recent Activity</h3>
+                    <a href="#" class="text-accent-primary text-sm hover:underline">View All</a>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr class="border-b border-dark-border">
+                                <th class="py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Time</th>
+                                <th class="py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">User</th>
+                                <th class="py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Action</th>
+                                <th class="py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-dark-border">
+                            <tr>
+                                <td class="py-3 whitespace-nowrap">2 min ago</td>
+                                <td class="py-3 whitespace-nowrap">john.doe@example.com</td>
+                                <td class="py-3 whitespace-nowrap">Token Swap</td>
+                                <td class="py-3 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-status-running bg-opacity-20 text-status-running">Success</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 whitespace-nowrap">15 min ago</td>
+                                <td class="py-3 whitespace-nowrap">alice.smith@example.com</td>
+                                <td class="py-3 whitespace-nowrap">NFT View</td>
+                                <td class="py-3 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-status-running bg-opacity-20 text-status-running">Success</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 whitespace-nowrap">32 min ago</td>
+                                <td class="py-3 whitespace-nowrap">robert.johnson@example.com</td>
+                                <td class="py-3 whitespace-nowrap">Staking</td>
+                                <td class="py-3 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-status-updating bg-opacity-20 text-status-updating">Pending</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 whitespace-nowrap">45 min ago</td>
+                                <td class="py-3 whitespace-nowrap">emily.wilson@example.com</td>
+                                <td class="py-3 whitespace-nowrap">Token Swap</td>
+                                <td class="py-3 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-status-error bg-opacity-20 text-status-error">Failed</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Settings Tab -->
+        <div id="settings" class="tab-content">
+            <div class="bg-dark-secondary rounded-lg p-6 border border-dark-border mb-6">
+                <h3 class="text-lg font-medium mb-4">General</h3>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label for="app-name" class="block text-sm font-medium text-gray-300 mb-2">Application Name</label>
+                        <input 
+                            type="text" 
+                            id="app-name" 
+                            name="app-name" 
+                            value="My DeFi App"
+                            class="w-full px-3 py-2 bg-dark-tertiary border border-dark-border rounded-md shadow-sm focus:outline-none focus:ring-accent-primary focus:border-accent-primary"
+                        >
+                    </div>
+                    
+                    <div>
+                        <label for="app-description" class="block text-sm font-medium text-gray-300 mb-2">Description</label>
+                        <textarea 
+                            id="app-description" 
+                            name="app-description" 
+                            rows="3" 
+                            class="w-full px-3 py-2 bg-dark-tertiary border border-dark-border rounded-md shadow-sm focus:outline-none focus:ring-accent-primary focus:border-accent-primary"
+                        >A decentralized finance application with token swapping and portfolio tracking.</textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-dark-secondary rounded-lg p-6 border border-dark-border mb-6">
+                <h3 class="text-lg font-medium mb-4">Appearance</h3>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">Theme</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <label class="relative block cursor-pointer">
+                            <input type="radio" name="theme" value="dark-blue" class="sr-only" checked>
+                            <div class="border-2 border-accent-primary rounded-lg overflow-hidden">
+                                <div class="h-16 bg-gradient-to-br from-gray-900 to-blue-900"></div>
+                            </div>
+                            <div class="mt-1 text-sm">Dark Blue</div>
+                        </label>
+                        
+                        <label class="relative block cursor-pointer">
+                            <input type="radio" name="theme" value="dark-purple" class="sr-only">
+                            <div class="border-2 border-dark-border hover:border-accent-primary rounded-lg overflow-hidden">
+                                <div class="h-16 bg-gradient-to-br from-gray-900 to-purple-900"></div>
+                            </div>
+                            <div class="mt-1 text-sm">Dark Purple</div>
+                        </label>
+                        
+                        <label class="relative block cursor-pointer">
+                            <input type="radio" name="theme" value="dark-green" class="sr-only">
+                            <div class="border-2 border-dark-border hover:border-accent-primary rounded-lg overflow-hidden">
+                                <div class="h-16 bg-gradient-to-br from-gray-900 to-green-900"></div>
+                            </div>
+                            <div class="mt-1 text-sm">Dark Green</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Usage Analytics Tab -->
+        <div id="usage" class="tab-content">
+            <div class="bg-dark-secondary rounded-lg p-6 border border-dark-border mb-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-lg font-medium">Usage Analytics</h3>
+                    
+                    <div class="flex space-x-2">
+                        <select class="bg-dark-tertiary border border-dark-border rounded-md px-3 py-1 text-sm">
+                            <option>Last 7 days</option>
+                            <option>Last 30 days</option>
+                            <option>Last 90 days</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-dark-tertiary rounded-lg p-4">
+                        <p class="text-sm text-gray-400">Total Users</p>
+                        <p class="text-2xl font-bold">1,245</p>
+                        <p class="text-xs text-green-500">+12% from last period</p>
+                    </div>
+                    
+                    <div class="bg-dark-tertiary rounded-lg p-4">
+                        <p class="text-sm text-gray-400">Active Users</p>
+                        <p class="text-2xl font-bold">427</p>
+                        <p class="text-xs text-green-500">+8% from last period</p>
+                    </div>
+                    
+                    <div class="bg-dark-tertiary rounded-lg p-4">
+                        <p class="text-sm text-gray-400">Total Transactions</p>
+                        <p class="text-2xl font-bold">8,392</p>
+                        <p class="text-xs text-green-500">+15% from last period</p>
+                    </div>
+                    
+                    <div class="bg-dark-tertiary rounded-lg p-4">
+                        <p class="text-sm text-gray-400">Avg. Session Time</p>
+                        <p class="text-2xl font-bold">4m 32s</p>
+                        <p class="text-xs text-green-500">+5% from last period</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Health & Logs Tab -->
+        <div id="health" class="tab-content">
+            <div class="bg-dark-secondary rounded-lg p-6 border border-dark-border mb-6">
+                <h3 class="text-lg font-medium mb-4">Overall Application Health</h3>
+                
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-status-running bg-opacity-20 flex items-center justify-center mr-4">
+                        <span class="text-status-running text-2xl">🟢</span>
+                    </div>
+                    <div>
+                        <p class="font-medium text-lg">Healthy</p>
+                        <p class="text-gray-400">Application is responding normally. All components are operational.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-dark-secondary rounded-lg p-6 border border-dark-border mb-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-medium">Recent Important Logs</h3>
+                    <button class="text-accent-primary text-sm hover:underline">View Full Logs</button>
+                </div>
+                
+                <div class="bg-dark-tertiary rounded-lg p-4 font-mono text-sm overflow-y-auto h-64">
+                    <div class="flex items-center justify-between mb-2 text-red-500">
+                        <span>[2025-05-01 14:32:08] [ERROR] [Flowapi]</span>
+                        <span class="text-xs">8s ago</span>
+                    </div>
+                    <div class="mb-4 pl-4 border-l-2 border-red-500">
+                        Failed to connect to cache server. Retrying in 5 seconds. Error: Connection refused.
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-2 text-yellow-500">
+                        <span>[2025-05-01 14:32:12] [WARNING] [Engine]</span>
+                        <span class="text-xs">4s ago</span>
+                    </div>
+                    <div class="mb-4 pl-4 border-l-2 border-yellow-500">
+                        Slow response detected from external API. Timeout increased to 5000ms.
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-2 text-green-500">
+                        <span>[2025-05-01 14:32:15] [INFO] [Engine]</span>
+                        <span class="text-xs">1s ago</span>
+                    </div>
+                    <div class="mb-4 pl-4 border-l-2 border-green-500">
+                        Application started successfully. All services initialized.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

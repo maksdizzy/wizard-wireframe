@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Creation Wizard - Step 3: Add Components</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            primary: '#121212',
+                            secondary: '#1e1e1e',
+                            tertiary: '#2d2d2d',
+                            border: '#333333',
+                        },
+                        accent: {
+                            primary: '#3b82f6',
+                            secondary: '#10b981',
+                            tertiary: '#f43f5e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-dark-primary text-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-dark-secondary border-b border-dark-border">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center w-full md:w-auto justify-between">
+                <h1 class="text-xl font-bold">Application Creation Wizard</h1>
+                <button class="md:hidden text-white mobile-menu-button">
+                    <!-- Hamburger icon for mobile -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- User menu -->
+            <div class="hidden md:flex items-center mt-4 md:mt-0">
+                <div class="relative">
+                    <button class="flex items-center space-x-2 focus:outline-none">
+                        <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center">
+                            <span class="text-sm font-medium">JD</span>
+                        </div>
+                        <span>John Doe</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Progress indicator -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Create New Application</h2>
+            <div class="flex items-center">
+                <div class="flex-1 flex items-center">
+                    <!-- Step 1 -->
+                    <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center text-white font-medium">1</div>
+                    <div class="h-1 flex-1 bg-accent-primary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 2 -->
+                    <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center text-white font-medium">2</div>
+                    <div class="h-1 flex-1 bg-accent-primary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 3 -->
+                    <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center text-white font-medium">3</div>
+                    <div class="h-1 flex-1 bg-dark-tertiary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 4 -->
+                    <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center text-white font-medium">4</div>
+                    <div class="h-1 flex-1 bg-dark-tertiary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 5 -->
+                    <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center text-white font-medium">5</div>
+                    <div class="h-1 flex-1 bg-dark-tertiary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 6 -->
+                    <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center text-white font-medium">6</div>
+                    <div class="h-1 flex-1 bg-dark-tertiary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 7 -->
+                    <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center text-white font-medium">7</div>
+                </div>
+            </div>
+            <div class="mt-2 text-center text-sm text-gray-400">Step 3 of 7: Add Components</div>
+        </div>
+        
+        <!-- Step 3: Add Components -->
+        <div class="bg-dark-secondary rounded-lg p-6 border border-dark-border wizard-step" data-step="3" data-prev="2" data-next="4">
+            <h3 class="text-xl font-medium mb-4">Add Components</h3>
+            <div class="bg-blue-900 bg-opacity-30 border border-blue-800 rounded-md p-4 mb-6">
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-400 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                    </svg>
+                    <p class="text-blue-200">Based on: <span class="font-medium">DeFi Focused App</span></p>
+                </div>
+            </div>
+            
+            <form>
+                <!-- Included Components (Read-only) -->
+                <div class="mb-6">
+                    <h4 class="text-lg font-medium mb-3">Included Components</h4>
+                    <p class="text-sm text-gray-400 mb-3">These components are included in your base template</p>
+                    
+                    <div class="bg-dark-tertiary rounded-md p-4">
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-secondary mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Wallet Connect</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-secondary mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Basic Swap UI</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-secondary mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Token Balance Display</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-secondary mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Transaction History</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-secondary mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Price Charts</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Optional Components -->
+                <div>
+                    <h4 class="text-lg font-medium mb-3">Optional Components</h4>
+                    <p class="text-sm text-gray-400 mb-3">Select additional components to enhance your application</p>
+                    
+                    <div class="space-y-3">
+                        <!-- Component 1 -->
+                        <label class="flex items-start p-3 bg-dark-tertiary rounded-md cursor-pointer hover:bg-opacity-80 transition duration-200">
+                            <input type="checkbox" class="component-checkbox mt-1 h-5 w-5 text-accent-primary bg-dark-primary border-dark-border rounded focus:ring-accent-primary focus:ring-opacity-25" value="nft-gallery">
+                            <div class="ml-3">
+                                <div class="font-medium">NFT Gallery</div>
+                                <p class="text-sm text-gray-400">Display and browse NFT collections</p>
+                            </div>
+                        </label>
+                        
+                        <!-- Component 2 -->
+                        <label class="flex items-start p-3 bg-dark-tertiary rounded-md cursor-pointer hover:bg-opacity-80 transition duration-200">
+                            <input type="checkbox" class="component-checkbox mt-1 h-5 w-5 text-accent-primary bg-dark-primary border-dark-border rounded focus:ring-accent-primary focus:ring-opacity-25" value="staking">
+                            <div class="ml-3">
+                                <div class="font-medium">Staking Module</div>
+                                <p class="text-sm text-gray-400">Stake tokens and earn rewards</p>
+                            </div>
+                        </label>
+                        
+                        <!-- Component 3 -->
+                        <label class="flex items-start p-3 bg-dark-tertiary rounded-md cursor-pointer hover:bg-opacity-80 transition duration-200">
+                            <input type="checkbox" class="component-checkbox mt-1 h-5 w-5 text-accent-primary bg-dark-primary border-dark-border rounded focus:ring-accent-primary focus:ring-opacity-25" value="multi-chain">
+                            <div class="ml-3">
+                                <div class="font-medium">Multi-Chain Support</div>
+                                <p class="text-sm text-gray-400">Support for multiple blockchain networks</p>
+                            </div>
+                        </label>
+                        
+                        <!-- Component 4 -->
+                        <label class="flex items-start p-3 bg-dark-tertiary rounded-md cursor-pointer hover:bg-opacity-80 transition duration-200">
+                            <input type="checkbox" class="component-checkbox mt-1 h-5 w-5 text-accent-primary bg-dark-primary border-dark-border rounded focus:ring-accent-primary focus:ring-opacity-25" value="notifications">
+                            <div class="ml-3">
+                                <div class="font-medium">Notifications</div>
+                                <p class="text-sm text-gray-400">Real-time alerts for transactions and price changes</p>
+                            </div>
+                        </label>
+                        
+                        <!-- Component 5 -->
+                        <label class="flex items-start p-3 bg-dark-tertiary rounded-md cursor-pointer hover:bg-opacity-80 transition duration-200">
+                            <input type="checkbox" class="component-checkbox mt-1 h-5 w-5 text-accent-primary bg-dark-primary border-dark-border rounded focus:ring-accent-primary focus:ring-opacity-25" value="social-feed">
+                            <div class="ml-3">
+                                <div class="font-medium">Social Feed</div>
+                                <p class="text-sm text-gray-400">Community discussion and updates</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Navigation buttons -->
+                <div class="flex justify-between mt-8">
+                    <a href="step2-type.html" class="wizard-back px-4 py-2 border border-dark-border rounded-md text-gray-300 hover:bg-dark-tertiary transition duration-200">
+                        Back
+                    </a>
+                    <a href="step4-appearance.html" class="wizard-next px-4 py-2 bg-accent-primary hover:bg-blue-600 text-white rounded-md transition duration-200">
+                        Next
+                    </a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div class="mobile-menu hidden md:hidden fixed inset-0 bg-dark-primary bg-opacity-90 z-50">
+        <div class="flex justify-end p-4">
+            <button class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="p-4">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 rounded-full bg-accent-primary flex items-center justify-center mr-3">
+                    <span class="text-sm font-medium">JD</span>
+                </div>
+                <div>
+                    <div class="font-medium">John Doe</div>
+                    <div class="text-sm text-gray-400">john.doe@example.com</div>
+                </div>
+            </div>
+            <ul class="space-y-4">
+                <li><a href="../dashboard-empty.html" class="block py-2 text-white">Dashboard</a></li>
+                <li><a href="#" class="block py-2 text-white">Settings</a></li>
+                <li><a href="#" class="block py-2 text-white">Help</a></li>
+                <li><a href="../index.html" class="block py-2 text-white">Sign Out</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Mobile bottom navigation -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-dark-secondary border-t border-dark-border p-4 flex justify-between">
+        <a href="step2-type.html" class="wizard-back px-4 py-2 border border-dark-border rounded-md text-gray-300 hover:bg-dark-tertiary transition duration-200">
+            Back
+        </a>
+        <a href="step4-appearance.html" class="wizard-next px-4 py-2 bg-accent-primary hover:bg-blue-600 text-white rounded-md transition duration-200">
+            Next
+        </a>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

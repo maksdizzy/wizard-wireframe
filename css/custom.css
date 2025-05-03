@@ -1,0 +1,119 @@
+/* Custom CSS styles beyond Tailwind */
+
+/* For custom scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444444;
+}
+
+/* For mobile optimization */
+@media (max-width: 640px) {
+    .mobile-bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #1e1e1e;
+        border-top: 1px solid #333333;
+        padding: 0.75rem;
+        z-index: 50;
+    }
+}
+
+/* Custom animations */
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Custom form element styling */
+.custom-checkbox {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #2d2d2d;
+    border: 1px solid #333333;
+    border-radius: 4px;
+}
+
+.custom-checkbox:hover input ~ .checkmark {
+    background-color: #3b3b3b;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: #3b82f6;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.custom-checkbox .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Status indicators */
+.status-running {
+    background-color: #10b981;
+}
+
+.status-stopped {
+    background-color: #6b7280;
+}
+
+.status-deploying {
+    background-color: #3b82f6;
+}
+
+.status-error {
+    background-color: #f43f5e;
+}

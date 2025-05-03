@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Creation Wizard - Dashboard</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            primary: '#121212',
+                            secondary: '#1e1e1e',
+                            tertiary: '#2d2d2d',
+                            border: '#333333',
+                        },
+                        accent: {
+                            primary: '#3b82f6',
+                            secondary: '#10b981',
+                            tertiary: '#f43f5e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-dark-primary text-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-dark-secondary border-b border-dark-border">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center w-full md:w-auto justify-between">
+                <h1 class="text-xl font-bold">Application Creation Wizard</h1>
+                <button class="md:hidden text-white mobile-menu-button">
+                    <!-- Hamburger icon for mobile -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- User menu -->
+            <div class="hidden md:flex items-center mt-4 md:mt-0">
+                <div class="relative">
+                    <button class="flex items-center space-x-2 focus:outline-none">
+                        <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center">
+                            <span class="text-sm font-medium">JD</span>
+                        </div>
+                        <span>John Doe</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Empty state - My Applications -->
+        <section class="mb-12">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">My Applications</h2>
+                <a href="wizard/step1-basics.html" class="bg-accent-primary hover:bg-blue-600 text-white py-2 px-4 rounded-md transition duration-200 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                    Create New Application
+                </a>
+            </div>
+            
+            <!-- Empty state message -->
+            <div class="bg-dark-secondary rounded-lg p-8 text-center border border-dark-border">
+                <div class="w-20 h-20 mx-auto mb-4 bg-dark-tertiary rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-medium mb-2">Create Your First Application!</h3>
+                <p class="text-gray-400 mb-6">Get started by creating a new application using our guided wizard.</p>
+                <a href="wizard/step1-basics.html" class="bg-accent-primary hover:bg-blue-600 text-white py-2 px-6 rounded-md transition duration-200 inline-block">
+                    Create New Application
+                </a>
+            </div>
+        </section>
+        
+        <!-- Explore Applications -->
+        <section>
+            <h2 class="text-2xl font-bold mb-6">Explore Applications</h2>
+            
+            <!-- Example applications - Horizontal scrolling on mobile -->
+            <div class="flex overflow-x-auto pb-4 space-x-4 -mx-4 px-4 md:grid md:grid-cols-3 md:gap-4 md:space-x-0">
+                <!-- Example 1 -->
+                <div class="bg-dark-secondary rounded-lg p-4 min-w-[280px] md:min-w-0 border border-dark-border">
+                    <div class="h-40 bg-dark-tertiary rounded-md mb-4 flex items-center justify-center">
+                        <span class="text-gray-400">DeFi Dashboard Preview</span>
+                    </div>
+                    <h3 class="font-medium mb-1">DeFi Dashboard</h3>
+                    <div class="text-xs inline-block px-2 py-1 bg-blue-900 text-blue-200 rounded mb-2">DeFi</div>
+                    <p class="text-gray-400 text-sm mb-4">Complete DeFi dashboard with wallet integration and swap functionality</p>
+                    <a href="#" class="text-accent-primary text-sm hover:underline">View Demo</a>
+                </div>
+                
+                <!-- Example 2 -->
+                <div class="bg-dark-secondary rounded-lg p-4 min-w-[280px] md:min-w-0 border border-dark-border">
+                    <div class="h-40 bg-dark-tertiary rounded-md mb-4 flex items-center justify-center">
+                        <span class="text-gray-400">Community Hub Preview</span>
+                    </div>
+                    <h3 class="font-medium mb-1">Community Hub</h3>
+                    <div class="text-xs inline-block px-2 py-1 bg-purple-900 text-purple-200 rounded mb-2">Community</div>
+                    <p class="text-gray-400 text-sm mb-4">Community platform with user profiles and discussion forums</p>
+                    <a href="#" class="text-accent-primary text-sm hover:underline">View Demo</a>
+                </div>
+                
+                <!-- Example 3 -->
+                <div class="bg-dark-secondary rounded-lg p-4 min-w-[280px] md:min-w-0 border border-dark-border">
+                    <div class="h-40 bg-dark-tertiary rounded-md mb-4 flex items-center justify-center">
+                        <span class="text-gray-400">Token Tracker Preview</span>
+                    </div>
+                    <h3 class="font-medium mb-1">Token Tracker</h3>
+                    <div class="text-xs inline-block px-2 py-1 bg-blue-900 text-blue-200 rounded mb-2">DeFi</div>
+                    <p class="text-gray-400 text-sm mb-4">Track token prices and portfolio performance</p>
+                    <a href="#" class="text-accent-primary text-sm hover:underline">View Demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div class="mobile-menu hidden md:hidden fixed inset-0 bg-dark-primary bg-opacity-90 z-50">
+        <div class="flex justify-end p-4">
+            <button class="text-white mobile-menu-close">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="p-4">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 rounded-full bg-accent-primary flex items-center justify-center mr-3">
+                    <span class="text-sm font-medium">JD</span>
+                </div>
+                <div>
+                    <div class="font-medium">John Doe</div>
+                    <div class="text-sm text-gray-400">john.doe@example.com</div>
+                </div>
+            </div>
+            <ul class="space-y-4">
+                <li><a href="#" class="block py-2 text-white">Dashboard</a></li>
+                <li><a href="#" class="block py-2 text-white">Settings</a></li>
+                <li><a href="#" class="block py-2 text-white">Help</a></li>
+                <li><a href="index.html" class="block py-2 text-white">Sign Out</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

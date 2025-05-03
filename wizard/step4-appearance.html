@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Creation Wizard - Step 4: Appearance</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            primary: '#121212',
+                            secondary: '#1e1e1e',
+                            tertiary: '#2d2d2d',
+                            border: '#333333',
+                        },
+                        accent: {
+                            primary: '#3b82f6',
+                            secondary: '#10b981',
+                            tertiary: '#f43f5e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-dark-primary text-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-dark-secondary border-b border-dark-border">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center w-full md:w-auto justify-between">
+                <h1 class="text-xl font-bold">Application Creation Wizard</h1>
+                <button class="md:hidden text-white mobile-menu-button">
+                    <!-- Hamburger icon for mobile -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- User menu -->
+            <div class="hidden md:flex items-center mt-4 md:mt-0">
+                <div class="relative">
+                    <button class="flex items-center space-x-2 focus:outline-none">
+                        <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center">
+                            <span class="text-sm font-medium">JD</span>
+                        </div>
+                        <span>John Doe</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Progress indicator -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Create New Application</h2>
+            <div class="flex items-center">
+                <div class="flex-1 flex items-center">
+                    <!-- Step 1 -->
+                    <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center text-white font-medium">1</div>
+                    <div class="h-1 flex-1 bg-accent-primary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 2 -->
+                    <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center text-white font-medium">2</div>
+                    <div class="h-1 flex-1 bg-accent-primary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 3 -->
+                    <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center text-white font-medium">3</div>
+                    <div class="h-1 flex-1 bg-accent-primary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 4 -->
+                    <div class="w-8 h-8 rounded-full bg-accent-primary flex items-center justify-center text-white font-medium">4</div>
+                    <div class="h-1 flex-1 bg-dark-tertiary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 5 -->
+                    <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center text-white font-medium">5</div>
+                    <div class="h-1 flex-1 bg-dark-tertiary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 6 -->
+                    <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center text-white font-medium">6</div>
+                    <div class="h-1 flex-1 bg-dark-tertiary"></div>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <!-- Step 7 -->
+                    <div class="w-8 h-8 rounded-full bg-dark-tertiary flex items-center justify-center text-white font-medium">7</div>
+                </div>
+            </div>
+            <div class="mt-2 text-center text-sm text-gray-400">Step 4 of 7: Appearance</div>
+        </div>
+        
+        <!-- Step 4: Appearance -->
+        <div class="bg-dark-secondary rounded-lg p-6 border border-dark-border wizard-step" data-step="4" data-prev="3" data-next="5">
+            <h3 class="text-xl font-medium mb-6">Appearance</h3>
+            <p class="text-gray-400 mb-6">Configure the visual style of your web application</p>
+            
+            <form>
+                <!-- Tabs for appearance options -->
+                <div class="mb-6">
+                    <div class="flex border-b border-dark-border">
+                        <button type="button" class="py-2 px-4 border-b-2 border-accent-primary text-accent-primary appearance-tab active" data-tab="predefined">Predefined Themes</button>
+                        <button type="button" class="py-2 px-4 border-b-2 border-transparent text-gray-400 hover:text-white appearance-tab" data-tab="custom">Custom Colors</button>
+                        <button type="button" class="py-2 px-4 border-b-2 border-transparent text-gray-400 hover:text-white appearance-tab" data-tab="ai">AI Generation</button>
+                    </div>
+                </div>
+                
+                <!-- Predefined Themes Tab -->
+                <div class="appearance-content" id="predefined-content">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <!-- Theme 1 -->
+                        <label class="cursor-pointer">
+                            <input type="radio" name="theme" value="dark-blue" class="sr-only" checked>
+                            <div class="border-2 border-accent-primary rounded-lg overflow-hidden">
+                                <div class="h-32 bg-gradient-to-br from-gray-900 to-blue-900 p-4">
+                                    <div class="w-full h-6 bg-gray-800 rounded mb-2"></div>
+                                    <div class="w-3/4 h-4 bg-gray-700 rounded mb-2"></div>
+                                    <div class="w-1/2 h-4 bg-blue-700 rounded"></div>
+                                </div>
+                                <div class="p-3 bg-dark-tertiary">
+                                    <div class="font-medium">Dark Blue</div>
+                                    <div class="text-xs text-gray-400">Modern dark theme with blue accents</div>
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <!-- Theme 2 -->
+                        <label class="cursor-pointer">
+                            <input type="radio" name="theme" value="dark-purple" class="sr-only">
+                            <div class="border-2 border-dark-border hover:border-accent-primary rounded-lg overflow-hidden">
+                                <div class="h-32 bg-gradient-to-br from-gray-900 to-purple-900 p-4">
+                                    <div class="w-full h-6 bg-gray-800 rounded mb-2"></div>
+                                    <div class="w-3/4 h-4 bg-gray-700 rounded mb-2"></div>
+                                    <div class="w-1/2 h-4 bg-purple-700 rounded"></div>
+                                </div>
+                                <div class="p-3 bg-dark-tertiary">
+                                    <div class="font-medium">Dark Purple</div>
+                                    <div class="text-xs text-gray-400">Elegant dark theme with purple accents</div>
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <!-- Theme 3 -->
+                        <label class="cursor-pointer">
+                            <input type="radio" name="theme" value="dark-green" class="sr-only">
+                            <div class="border-2 border-dark-border hover:border-accent-primary rounded-lg overflow-hidden">
+                                <div class="h-32 bg-gradient-to-br from-gray-900 to-green-900 p-4">
+                                    <div class="w-full h-6 bg-gray-800 rounded mb-2"></div>
+                                    <div class="w-3/4 h-4 bg-gray-700 rounded mb-2"></div>
+                                    <div class="w-1/2 h-4 bg-green-700 rounded"></div>
+                                </div>
+                                <div class="p-3 bg-dark-tertiary">
+                                    <div class="font-medium">Dark Green</div>
+                                    <div class="text-xs text-gray-400">Professional dark theme with green accents</div>
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <!-- Theme 4 -->
+                        <label class="cursor-pointer">
+                            <input type="radio" name="theme" value="light-blue" class="sr-only">
+                            <div class="border-2 border-dark-border hover:border-accent-primary rounded-lg overflow-hidden">
+                                <div class="h-32 bg-gradient-to-br from-gray-100 to-blue-100 p-4">
+                                    <div class="w-full h-6 bg-white rounded mb-2"></div>
+                                    <div class="w-3/4 h-4 bg-gray-200 rounded mb-2"></div>
+                                    <div class="w-1/2 h-4 bg-blue-500 rounded"></div>
+                                </div>
+                                <div class="p-3 bg-dark-tertiary">
+                                    <div class="font-medium">Light Blue</div>
+                                    <div class="text-xs text-gray-400">Clean light theme with blue accents</div>
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <!-- Theme 5 -->
+                        <label class="cursor-pointer">
+                            <input type="radio" name="theme" value="light-purple" class="sr-only">
+                            <div class="border-2 border-dark-border hover:border-accent-primary rounded-lg overflow-hidden">
+                                <div class="h-32 bg-gradient-to-br from-gray-100 to-purple-100 p-4">
+                                    <div class="w-full h-6 bg-white rounded mb-2"></div>
+                                    <div class="w-3/4 h-4 bg-gray-200 rounded mb-2"></div>
+                                    <div class="w-1/2 h-4 bg-purple-500 rounded"></div>
+                                </div>
+                                <div class="p-3 bg-dark-tertiary">
+                                    <div class="font-medium">Light Purple</div>
+                                    <div class="text-xs text-gray-400">Soft light theme with purple accents</div>
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <!-- Theme 6 -->
+                        <label class="cursor-pointer">
+                            <input type="radio" name="theme" value="light-green" class="sr-only">
+                            <div class="border-2 border-dark-border hover:border-accent-primary rounded-lg overflow-hidden">
+                                <div class="h-32 bg-gradient-to-br from-gray-100 to-green-100 p-4">
+                                    <div class="w-full h-6 bg-white rounded mb-2"></div>
+                                    <div class="w-3/4 h-4 bg-gray-200 rounded mb-2"></div>
+                                    <div class="w-1/2 h-4 bg-green-500 rounded"></div>
+                                </div>
+                                <div class="p-3 bg-dark-tertiary">
+                                    <div class="font-medium">Light Green</div>
+                                    <div class="text-xs text-gray-400">Fresh light theme with green accents</div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Custom Colors Tab (Hidden by default) -->
+                <div class="appearance-content hidden" id="custom-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-medium mb-4">Primary Colors</h4>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Background Color</label>
+                                <div class="flex items-center">
+                                    <input type="color" id="bg-color" value="#121212" class="w-10 h-10 rounded border-0 p-0 mr-3">
+                                    <input type="text" value="#121212" class="bg-dark-tertiary border border-dark-border rounded-md px-3 py-2 w-full">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Primary Accent Color</label>
+                                <div class="flex items-center">
+                                    <input type="color" id="primary-color" value="#3b82f6" class="w-10 h-10 rounded border-0 p-0 mr-3">
+                                    <input type="text" value="#3b82f6" class="bg-dark-tertiary border border-dark-border rounded-md px-3 py-2 w-full">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Secondary Accent Color</label>
+                                <div class="flex items-center">
+                                    <input type="color" id="secondary-color" value="#10b981" class="w-10 h-10 rounded border-0 p-0 mr-3">
+                                    <input type="text" value="#10b981" class="bg-dark-tertiary border border-dark-border rounded-md px-3 py-2 w-full">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium mb-4">Text Colors</h4>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Primary Text Color</label>
+                                <div class="flex items-center">
+                                    <input type="color" id="text-color" value="#ffffff" class="w-10 h-10 rounded border-0 p-0 mr-3">
+                                    <input type="text" value="#ffffff" class="bg-dark-tertiary border border-dark-border rounded-md px-3 py-2 w-full">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Secondary Text Color</label>
+                                <div class="flex items-center">
+                                    <input type="color" id="text-secondary-color" value="#a0a0a0" class="w-10 h-10 rounded border-0 p-0 mr-3">
+                                    <input type="text" value="#a0a0a0" class="bg-dark-tertiary border border-dark-border rounded-md px-3 py-2 w-full">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Border Color</label>
+                                <div class="flex items-center">
+                                    <input type="color" id="border-color" value="#333333" class="w-10 h-10 rounded border-0 p-0 mr-3">
+                                    <input type="text" value="#333333" class="bg-dark-tertiary border border-dark-border rounded-md px-3 py-2 w-full">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-medium mb-4">Preview</h4>
+                        <div class="border border-dark-border rounded-lg overflow-hidden">
+                            <div class="bg-dark-secondary p-4 border-b border-dark-border">
+                                <div class="w-full h-8 bg-dark-tertiary rounded mb-2"></div>
+                                <div class="flex space-x-2">
+                                    <div class="w-24 h-6 bg-accent-primary rounded"></div>
+                                    <div class="w-24 h-6 bg-dark-tertiary rounded"></div>
+                                    <div class="w-24 h-6 bg-dark-tertiary rounded"></div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-dark-primary">
+                                <div class="w-full h-32 bg-dark-secondary rounded-lg border border-dark-border p-3">
+                                    <div class="w-3/4 h-4 bg-white rounded mb-2"></div>
+                                    <div class="w-1/2 h-4 bg-gray-400 rounded mb-4"></div>
+                                    <div class="w-1/4 h-6 bg-accent-primary rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI Generation Tab (Hidden by default) -->
+                <div class="appearance-content hidden" id="ai-content">
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Generate colors from text description</label>
+                        <div class="flex">
+                            <input type="text" placeholder="e.g., 'Modern cyberpunk with neon accents'" class="bg-dark-tertiary border border-dark-border rounded-l-md px-3 py-2 w-full">
+                            <button type="button" class="bg-accent-primary hover:bg-blue-600 text-white px-4 py-2 rounded-r-md transition duration-200">
+                                Generate
+                            </button>
+                        </div>
+                        <p class="mt-1 text-sm text-gray-400">Describe the style you want, and AI will generate a matching color palette</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Or upload an image for color extraction</label>
+                        <div class="border-2 border-dashed border-dark-border rounded-lg p-6 text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <p class="text-gray-400 mb-2">Drag and drop an image here, or click to browse</p>
+                            <button type="button" class="bg-dark-tertiary hover:bg-gray-700 text-white px-4 py-2 rounded-md transition duration-200">
+                                Browse Files
+                            </button>
+                            <input type="file" class="hidden" accept="image/*">
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-medium mb-4">Generated Palette (Preview)</h4>
+                        <div class="grid grid-cols-5 gap-2 mb-4">
+                            <div class="h-12 bg-blue-900 rounded"></div>
+                            <div class="h-12 bg-blue-700 rounded"></div>
+                            <div class="h-12 bg-purple-600 rounded"></div>
+                            <div class="h-12 bg-pink-600 rounded"></div>
+                            <div class="h-12 bg-indigo-800 rounded"></div>
+                        </div>
+                        <button type="button" class="bg-accent-primary hover:bg-blue-600 text-white px-4 py-2 rounded-md transition duration-200">
+                            Apply This Palette
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Logo Upload Section -->
+                <div class="mt-8 pt-6 border-t border-dark-border">
+                    <h4 class="font-medium mb-4">Upload Logo</h4>
+                    <div class="border-2 border-dashed border-dark-border rounded-lg p-6 text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <p class="text-gray-400 mb-2">Drag and drop your logo here, or click to browse</p>
+                        <p class="text-sm text-gray-500 mb-4">Recommended size: 200x200px, PNG or SVG format</p>
+                        <button type="button" class="bg-dark-tertiary hover:bg-gray-700 text-white px-4 py-2 rounded-md transition duration-200">
+                            Browse Files
+                        </button>
+                        <input type="file" class="hidden" accept="image/*">
+                    </div>
+                </div>
+                
+                <!-- Navigation buttons -->
+                <div class="flex justify-between mt-8">
+                    <a href="step3-components.html" class="wizard-back px-4 py-2 border border-dark-border rounded-md text-gray-300 hover:bg-dark-tertiary transition duration-200">
+                        Back
+                    </a>
+                    <a href="step5-social.html" class="wizard-next px-4 py-2 bg-accent-primary hover:bg-blue-600 text-white rounded-md transition duration-200">
+                        Next
+                    </a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div class="mobile-menu hidden md:hidden fixed inset-0 bg-dark-primary bg-opacity-90 z-50">
+        <div class="flex justify-end p-4">
+            <button class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="p-4">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 rounded-full bg-accent-primary flex items-center justify-center mr-3">
+                    <span class="text-sm font-medium">JD</span>
+                </div>
+                <div>
+                    <div class="font-medium">John Doe</div>
+                    <div class="text-sm text-gray-400">john.doe@example.com</div>
+                </div>
+            </div>
+            <ul class="space-y-4">
+                <li><a href="../dashboard-empty.html" class="block py-2 text-white">Dashboard</a></li>
+                <li><a href="#" class="block py-2 text-white">Settings</a></li>
+                <li><a href="#" class="block py-2 text-white">Help</a></li>
+                <li><a href="../index.html" class="block py-2 text-white">Sign Out</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Mobile bottom navigation -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-dark-secondary border-t border-dark-border p-4 flex justify-between">
+        <a href="step3-components.html" class="wizard-back px-4 py-2 border border-dark-border rounded-md text-gray-300 hover:bg-dark-tertiary transition duration-200">
+            Back
+        </a>
+        <a href="step5-social.html" class="wizard-next px-4 py-2 bg-accent-primary hover:bg-blue-600 text-white rounded-md transition duration-200">
+            Next
+        </a>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Handle tab switching
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.appearance-tab');
+            const contents = document.querySelectorAll('.appearance-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => {
+                        t.classList.remove('active', 'border-accent-primary', 'text-accent-primary');
+                        t.classList.add('border-transparent', 'text-gray-400');
+                    });
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active', 'border-accent-primary', 'text-accent-primary');
+                    this.classList.remove('border-transparent', 'text-gray-400');
+                    
+                    // Hide all content
+                    contents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    
+                    // Show corresponding content
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId + '-content').classList.remove('hidden');
+                });
+            });
+            
+            // Handle theme selection
+            const themeRadios = document.querySelectorAll('input[name="theme"]');
+            
+            themeRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    // Reset all theme containers
+                    document.querySelectorAll('input[name="theme"]').forEach(rb => {
+                        const container = rb.closest('label').querySelector('div');
+                        
+                        if (rb.checked) {
+                            container.classList.remove('border-dark-border');
+                            container.classList.add('border-accent-primary');
+                        } else {
+                            container.classList.remove('border-accent-primary');
+                            container.classList.add('border-dark-border');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
